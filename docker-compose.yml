@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: telegram_pdf_bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./template_ie.pdf:/app/template_ie.pdf
+      - ./template_ir.pdf:/app/template_ir.pdf
+      - ./template_uk.pdf:/app/template_uk.pdf
+      - ./fonts/Calibri:/app/fonts/Calibri
+      - ./fonts/Arial:/app/fonts/Arial
+      - ./fonts/opensans:/app/fonts/opensans
+      - ./fonts/Tahoma:/app/fonts/Tahoma
+      - ./fonts/utsaah:/app/fonts/utsaah
+      - ./fonts/Verdana:/app/fonts/Verdana
