@@ -108,7 +108,6 @@ class text_generator:
 
         emergency_no = lines[4].strip() 
         acc_enquires = lines[5].strip()
-        # account_number = ''.join([str(randint(0, 9)) for _ in range(11)])
         bill_period = lines[6].strip()
         issue_date = lines[7].strip()
         acc_no = lines[8].strip()
@@ -116,17 +115,21 @@ class text_generator:
         gprn = lines[10].strip()
         amount_value1 = lines[11].strip()
         amount_value2 = lines[12].strip()
-        amount_value3 = lines[13].strip()
+
+
+        unpaid_dd = lines[13].strip()
+        unpaid_dd_fee = lines[14].strip()
+        vat = lines[15].strip()
+        
+        nof_amount_value3 = float(unpaid_dd) + float(unpaid_dd_fee) + float(vat)
+        amount_value3 = f"{nof_amount_value3:.2f}"
 
         noformat_value = float(amount_value1) - float(amount_value2) + float(amount_value3)
         total_value = f"{noformat_value:.2f}"
 
-        unpaid_dd = lines[14].strip()
-        unpaid_dd_fee = lines[15].strip()
-        vat = lines[16].strip()
-        value_be_taken = lines[17].strip()
-        tel = lines[18].strip()
-        numbers = lines[19].strip()
+        value_be_taken = lines[16].strip()
+        tel = lines[17].strip()
+        numbers = lines[18].strip()
 
         address_city_up = address_city.upper()
         
@@ -143,7 +146,7 @@ class text_generator:
             {'text': gprn, 'x': 491, 'y': 611.3, 'font': 'ocrb10', 'size': 9, 'align': 'left'},
             {'text': amount_value1, 'x': 440, 'y': 484, 'font': 'calibri', 'size': 9, 'align': 'right'},
             {'text': amount_value2, 'x': 440, 'y': 473, 'font': 'calibri', 'size': 9, 'align': 'right'},
-            {'text': amount_value3, 'x': 440, 'y': 416.6, 'font': 'calibri', 'size': 9, 'align': 'right'},
+            {'text': str(amount_value3), 'x': 440, 'y': 416.6, 'font': 'calibri', 'size': 9, 'align': 'right'},
             {'text': str(total_value), 'x': 407.5, 'y': 353.5, 'font': 'calibri_bold', 'size': 11, 'align': 'left'},
             {'text': unpaid_dd, 'x': 362, 'y': 440, 'font': 'calibri', 'size': 9, 'align': 'right'},
             {'text': unpaid_dd_fee, 'x': 362, 'y': 428.75, 'font': 'calibri', 'size': 9, 'align': 'right'},

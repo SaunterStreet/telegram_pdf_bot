@@ -11,7 +11,6 @@ ir_template = """*Имя*, например: ILIA KOKOTOV
 *GPRN*, например: 1872380
 *БЛОК AMOUNT. Last Bill*, например: 368.80
 *БЛОК AMOUNT. Payments received*, например: 281.00
-*БЛОК AMOUNT. VAT*, например 170.02
 *БЛОК C. Unpaid Debit*, например 152.49
 *БЛОК C. UNPAID DEBIT FEE*, например: 14.26
 *БЛОК C. V.A.T*, например: 3.27
