@@ -40,7 +40,7 @@ class ModeConfig(TypedDict):
 MODE_CONFIG: Dict[str, ModeConfig] = {
     "israel": {
         "label": "Israel",
-        "required_lines": 20,
+        "required_lines": 19,
         "template_path": "template_ir.pdf",
         "generator": text_generator.generate_text_data_ir,
         "template_hint": ir_template,
@@ -84,7 +84,7 @@ async def info(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         return
     await message.reply_text(
         "Доступные режимы:\n"
-        "• /israel — счёт Israel (20 строк)\n"
+        "• /israel — счёт Israel (19 строк)\n"
         "• /ireland — счёт Ireland (23 строки)\n"
         "• /uk — счёт Великобритания (12 строк)\n\n"
         "После активации режима просто пришли данные построчно. "
